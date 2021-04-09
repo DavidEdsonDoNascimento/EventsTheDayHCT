@@ -4,7 +4,8 @@
   "description": "Application to organize the events of your day",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w"
   },
   "author": "David Nascimento",
   "license": "ISC",
