@@ -3,7 +3,8 @@
         "target": "ES6",
         "outDir": "app/js",
         "noImplicitAny": true,
-        "removeComments": true
+        "removeComments": true,
+        "module": "System"
     },
     "include": [
         "app/ts/**/*"
