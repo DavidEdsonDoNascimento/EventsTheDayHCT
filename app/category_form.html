@@ -57,15 +57,15 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="">categoria:</label>
-                                                <input type="text" class="form-control" maxlength="255">
+                                                <label for="category">categoria:</label>
+                                                <input type="text" id="category" class="form-control" maxlength="255">
                                             </div>
                                         </div>
                                         <div class="col-md-8"></div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button class="btn btn-primary">Salvar</button>
+                                    <button id="btn-save-category" class="btn btn-primary">Salvar</button>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +80,8 @@
     <script src="lib/system.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/light-bootstrap-dashboard.js"></script>
-
-    <script>
-        System.defaultJSExtensions = true;
-        System.import('js/app.js').catch(err => console.log(err));
-    </script>
+    <script src="js/models/category.js"></script>
+    <script src="js/views/category.js"></script>
     
 </body>
 </html>

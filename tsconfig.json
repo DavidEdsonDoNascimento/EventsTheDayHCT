@@ -1,10 +1,9 @@
 {
-    "compilerOptions": {
+    "compilerOptions":{
         "target": "ES6",
         "outDir": "app/js",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "module": "System"
+        "noEmitOnError": true,
+        "noImplicitAny": true
     },
     "include": [
         "app/ts/**/*"
