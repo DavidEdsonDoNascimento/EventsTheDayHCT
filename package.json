@@ -1,19 +1,13 @@
 {
   "name": "events_of_the_day",
   "version": "1.0.0",
-  "description": "Application to organize the events of your day",
   "main": "index.js",
+  "repository": "https://github.com/DavidEdsonDoNascimento/events_of_the_day.git",
+  "author": "David Edson <david.contato.tec@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc",
-    "start": "tsc -w"
   },
-  "author": "David Nascimento",
-  "license": "ISC",
   "devDependencies": {
     "typescript": "^4.2.4"
-  },
-  "dependencies": {
-    "@types/jquery": "^3.5.5"
   }
 }
