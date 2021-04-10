@@ -1,3 +1,1 @@
-$(document).ready(function(){
-    alert('oi');
-})
+console.log('Hello word 2');
