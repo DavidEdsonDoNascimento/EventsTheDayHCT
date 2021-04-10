@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Events of the day</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/light-bootstrap-dashboard.css">
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text">
+                        Evensts of the day
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Resumo</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="event_form.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Criar acontecimento</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="category_form.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Criar categoria</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Novo evento</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <label for="">Resumo:</label>
+                                                <input type="text" class="form-control" maxlength="255">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="">Ocorrido:</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Call</option>
+                                                    <option value="">Alinhamento presencial</option>
+                                                    <option value="">Desenvolvimento</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Detalhes:</label>
+                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-primary">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/system.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/light-bootstrap-dashboard.js"></script>
+
+    <script>
+        System.defaultJSExtensions = true;
+        System.import('js/app.js').catch(err => console.log(err));
+    </script>
+    
+</body>
+</html>
