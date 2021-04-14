@@ -1,5 +1,5 @@
 //essa constante ainda precisa ser pensada onde ficará
-const ROUTE_API = `ROUTE_API`;
+const ROUTE_API = `http://localhost:3100`
 
 $(document).ready(function(){
     btnSaveCategory()
@@ -22,7 +22,7 @@ const ajaxRequestSaveCategory = (category: Category) =>
         url: `${ROUTE_API}/category`,
         method: 'POST',
         dataType: 'json',
-        data: category,
+        data: { name: "teste" },
         success: function(data){
             console.log(data)
         },

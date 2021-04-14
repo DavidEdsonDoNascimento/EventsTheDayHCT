@@ -6,6 +6,8 @@
   "author": "David Edson <david.contato.tec@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "compile": "tsc",
+    "start": "tsc -w"
   },
   "devDependencies": {
     "typescript": "^4.2.4"
