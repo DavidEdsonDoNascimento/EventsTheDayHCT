@@ -1,5 +1,3 @@
-//essa constante ainda precisa ser pensada onde ficará
-const ROUTE_API = `http://localhost:3100`
 
 $(document).ready(function(){
     btnSaveCategory()
@@ -7,8 +5,10 @@ $(document).ready(function(){
 
 const btnSaveCategory = () => {
     $('#btn-save-category').on('click', function(){
-        let category = new Category(String($('#category').val()))
-        ajaxRequestSaveCategory(category)
+        let category = $('#category').val()
+        let strCat = String(category)
+        let objC = new Category(strCat)
+        ajaxRequestSaveCategory(objC)
     })
 }
 
@@ -19,10 +19,12 @@ const btnSaveCategory = () => {
 const ajaxRequestSaveCategory = (category: Category) =>
 {
     $.ajax({
-        url: `${ROUTE_API}/category`,
+        url: `http://localhost:3100/category`,
         method: 'POST',
         dataType: 'json',
-        data: { name: "teste" },
+        data: {
+            category: category.name 
+        },
         success: function(data){
             console.log(data)
         },
