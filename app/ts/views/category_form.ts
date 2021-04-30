@@ -1,35 +1,33 @@
 
-$(document).ready(function(){
-    btnSaveCategory()
-})
 
-const btnSaveCategory = () => {
-    $('#btn-save-category').on('click', function(){
-        let category = $('#category').val()
-        let strCat = String(category)
-        let objC = new Category(strCat)
-        ajaxRequestSaveCategory(objC)
-    })
-}
-
-/**
- * Requisição Ajax responsável por salvar a nova categoria
- * @param category Category
- */
-const ajaxRequestSaveCategory = (category: Category) =>
-{
+$('#btn-save-category').on('click', () => {
+    let categoryInput  = $('#category').val()
+    
     $.ajax({
         url: `http://localhost:3100/category`,
         method: 'POST',
         dataType: 'json',
         data: {
-            category: category.name 
+            name: categoryInput
         },
         success: function(data){
-            console.log(data)
+            if(data.success){
+                showCreatedCategoryMessage(data.message)
+            }
         },
         error: function(er){
             console.log(er)
         }
     })
+})
+
+const showCreatedCategoryMessage = (msg: string) => {
+    let messageElement = $('.message')
+    messageElement.addClass('alert alert-success')
+    messageElement.text(msg)
+    messageElement.fadeIn()
+    
+    setTimeout(()=>{
+        messageElement.fadeOut()
+    }, 2000)
 }
