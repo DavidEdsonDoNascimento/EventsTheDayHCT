@@ -9,7 +9,8 @@ $('#btn-save-category').on('click', () => {
         },
         success: function (data) {
             if (data.success) {
-                showCreatedCategoryMessage(data.message);
+                showMessage('success', data.message);
+                resetCategoryInputs();
             }
         },
         error: function (er) {
@@ -17,12 +18,6 @@ $('#btn-save-category').on('click', () => {
         }
     });
 });
-const showCreatedCategoryMessage = (msg) => {
-    let messageElement = $('.message');
-    messageElement.addClass('alert alert-success');
-    messageElement.text(msg);
-    messageElement.fadeIn();
-    setTimeout(() => {
-        messageElement.fadeOut();
-    }, 2000);
+const resetCategoryInputs = () => {
+    $('#category').val('');
 };
