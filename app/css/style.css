@@ -2,3 +2,7 @@ body {
     background-color: black;
     color: #C9D1CC;
 }
+
+.invalid-input {
+    border: 1px solid red;
+}

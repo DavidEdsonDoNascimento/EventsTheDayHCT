@@ -26,7 +26,8 @@ $('#btn-save-event').on('click', () => {
     let summary = $('#summary').val();
     let obs = $('#obs').val();
     let selectedCategory = $('#select-category').val();
-    if (selectedCategory == 0) {
+    let isValid = isValidInputFields();
+    if (!isValid) {
         return;
     }
     $.ajax({
@@ -53,4 +54,39 @@ const resetEventInputs = () => {
     $('#summary').val('');
     $('#obs').val('');
     $('#select-category').val('0');
+};
+//ToDo - Arrumar uma melhor abordagem
+const isValidInputFields = () => {
+    let errors = 0;
+    errors += isValidInputFieldSummary();
+    errors += isValidInputFieldSelectedCategory();
+    return errors == 0;
+};
+const isValidInputFieldSummary = () => {
+    let input = $('#summary');
+    let value = input.val();
+    let formGroup = input.parent();
+    let spanMessage = formGroup.children('.invalid-input-message');
+    if (value != '') {
+        input.removeClass('invalid-input');
+        spanMessage.fadeOut();
+        return 0;
+    }
+    input.addClass('invalid-input');
+    spanMessage.fadeIn();
+    return 1;
+};
+const isValidInputFieldSelectedCategory = () => {
+    let input = $('#select-category');
+    let value = input.val();
+    let formGroup = input.parent();
+    let spanMessage = formGroup.children('.invalid-input-message');
+    if (value != 0) {
+        input.removeClass('invalid-input');
+        spanMessage.fadeOut();
+        return 0;
+    }
+    input.addClass('invalid-input');
+    spanMessage.fadeIn();
+    return 1;
 };
