@@ -10,19 +10,19 @@ const loadCategoriesForOccurred = () => {
             if (!data.success) {
                 return;
             }
-            popularTheElement($('#select-category'), data.categories);
+            popularTheElementSelect($('#select-category'), data.categories);
         },
         error: function (er) {
             console.log(er);
         }
     });
 };
-const popularTheElement = (element, items) => {
+const popularTheElementSelect = (element, items) => {
     items.forEach((category) => {
         element.append(`<option value="${category.id}">${category.name}</option>`);
     });
 };
-$('#btn-save-event').on('click', () => {
+$('#btn-save-occurrence').on('click', () => {
     let summary = $('#summary').val();
     let obs = $('#obs').val();
     let selectedCategory = $('#select-category').val();
@@ -31,7 +31,7 @@ $('#btn-save-event').on('click', () => {
         return;
     }
     $.ajax({
-        url: `http://localhost:3100/event`,
+        url: `http://localhost:3100/occurrence`,
         method: 'POST',
         dataType: 'json',
         data: {
@@ -42,7 +42,7 @@ $('#btn-save-event').on('click', () => {
         success: function (data) {
             if (data.success) {
                 showMessage('success', data.message);
-                resetEventInputs();
+                resetOccurrenceInputs();
             }
         },
         error: function (er) {
@@ -50,7 +50,7 @@ $('#btn-save-event').on('click', () => {
         }
     });
 });
-const resetEventInputs = () => {
+const resetOccurrenceInputs = () => {
     $('#summary').val('');
     $('#obs').val('');
     $('#select-category').val('0');
