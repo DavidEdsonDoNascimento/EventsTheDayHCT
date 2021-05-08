@@ -1,2 +1,2 @@
-# events_of_the_day
+# events of the day
 Application to organize the events of your day
