@@ -39,21 +39,14 @@ const templateUpdate = (model: Occurrence) => {
                     <label for="task-focus">
                         Focar nessa tarefa
                     </label>
-                    
                 </div>
-                <div class="col-sm-8"></div>
-
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <span style="font-size:10px">Quarta-feira</span>
+                <div class="col-sm-8">
                     <span style="font-size:12px; color: #9667E9">21 de Abril de 2021</span>
                 </div>
-                <div class="col-sm-8"></div>
             </div>
         </div>
         <div class="card-body">
-            <label>Resumo:</label>
+            <span style="font-size: bold">Resumo:</span>
             <p>
                 ${model.summary}
             </p>

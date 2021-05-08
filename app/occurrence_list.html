@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Events of the day</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/light-bootstrap-dashboard.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text">
+                        Evensts of the day
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Pagina Inicial</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="occurrence_list.html" class="nav-link">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Acontecimentos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="occurrence_form.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Criar acontecimento</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="category_list.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>categorias</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="category_form.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Criar categoria</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="container">
+                <div class="row">
+                    <div class="card occurrence-search">
+
+                    </div>
+                </div>
+
+                <div class="row" id="occurrence-list-day">
+                    <div class="col-sm-3">
+                        <button class="btn btn-default bg-light text-dark collapsed" data-toggle="collapse" data-target="#occurences-of-day">07 de maio de 2021 - Sexta-feira</button>
+                    </div>
+                    <div class="col-sm-9"></div>
+                    <div id="occurences-of-day" class="collapse col-sm-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <input type="checkbox" name="task-focus" id="task-focus" onclick="newTime('teste')">
+                                        <label for="task-focus">
+                                            Focar nessa tarefa
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <span style="font-size:12px; color: #9667E9">21 de Abril de 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span style="font-size: bold">Resumo:</span>
+                                <p>
+                                    Call com Matheus e Richard para estimarmos os cards da Sprint
+                                </p>
+                                
+                                <button class="btn btn-sm btn-warning" data-toggle="collapse" data-target="#schedule">Horarios</button>
+                                
+                                <div id="schedule" class="collapse border p-2 mt-3">
+                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="times">
+                                                08:15 até 08:29 
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <button class="btn btn-sm btn-default">Editar</button>
+                                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(1)">X</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="times">
+                                                09:10 até 09:50
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <button class="btn btn-sm btn-default">Editar</button>
+                                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(2)">X</button>
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/system.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/light-bootstrap-dashboard.js"></script>
+    <!-- <script src="js/models/occurrence.js"></script>
+    <script src="js/views/occurrence_list.js"></script> -->
+</body>
+</html>
