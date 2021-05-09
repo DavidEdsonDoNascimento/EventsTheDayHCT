@@ -59,70 +59,30 @@
         <div class="main-panel">
             <div class="container">
                 <div class="row">
-                    <div class="card occurrence-search">
-
-                    </div>
-                </div>
-
-                <div class="row" id="occurrence-list-day">
-                    <div class="col-sm-3">
-                        <button class="btn btn-default bg-light text-dark collapsed" data-toggle="collapse" data-target="#occurences-of-day">07 de maio de 2021 - Sexta-feira</button>
-                    </div>
-                    <div class="col-sm-9"></div>
-                    <div id="occurences-of-day" class="collapse col-sm-12">
-                        <div class="card">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <input type="checkbox" name="task-focus" id="task-focus" onclick="newTime('teste')">
-                                        <label for="task-focus">
-                                            Focar nessa tarefa
-                                        </label>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <span style="font-size:12px; color: #9667E9">21 de Abril de 2021</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <span style="font-size: bold">Resumo:</span>
-                                <p>
-                                    Call com Matheus e Richard para estimarmos os cards da Sprint
-                                </p>
-                                
-                                <button class="btn btn-sm btn-warning" data-toggle="collapse" data-target="#schedule">Horarios</button>
-                                
-                                <div id="schedule" class="collapse border p-2 mt-3">
-                    
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="times">
-                                                08:15 até 08:29 
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <button class="btn btn-sm btn-default">Editar</button>
-                                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(1)">X</button>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="times">
-                                                09:10 até 09:50
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <button class="btn btn-sm btn-default">Editar</button>
-                                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(2)">X</button>
-                                        </div>
-                                    </div>
-                    
-                                </div>
-                            </div>
+                    <div class="card occurrence-search col-sm-12">
+                        <div>
+                            <label>Busca:</label>
+                            <input type="text " class="form-control" id="summary-search">
+                        </div>
+                        <div>
+                            <select class="form-control">
+                                <option val="0">Hoje</option>
+                                <option val="1">Semanal</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+
+                <table class="table table-bordered table-light" id="occurrence-list-day">
+                    <thead>
+                        <tr>
+                            <th scope="col">Resumo</th>
+                            <th scope="col">Criado em</th>
+                            <th scope="col">Horários</th>
+                            <th scope="col">Detalhes</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ const loadsTheOccurrences = () => {
                 return
             }
             
-            popularTheElement($('#occurrence-list'), data.occurrence)
+            popularTheElement($('#occurrence-list-day'), data.occurrence)
         },
         error: function(er){
             console.log(er)
