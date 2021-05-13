@@ -58,19 +58,22 @@
         </div>
         <div class="main-panel">
             <div class="container">
-                <div class="row">
-                    <div class="card occurrence-search col-sm-12">
-                        <div>
-                            <label>Busca:</label>
-                            <input type="text " class="form-control" id="summary-search">
-                        </div>
-                        <div>
-                            <select class="form-control">
-                                <option val="0">Hoje</option>
-                                <option val="1">Semanal</option>
-                            </select>
-                        </div>
+                <div class="card occurrence-search">
+                    <div class="col-sm-6">
+                        <label>Busca:</label>
+                        <input type="text " class="form-control" id="summary-search">
                     </div>
+                    <div class="col-sm-2">
+                        <label for="">Faixa:</label>
+                        <select class="form-control">
+                            <option val="0">Hoje</option>
+                            <option val="1">Semanal</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary">Buscar</button>
+                    </div>
+                    <div class="col-sm-2"></div>
                 </div>
 
                 <table class="table table-bordered table-light" id="occurrence-list-day">
@@ -82,6 +85,7 @@
                             <th scope="col">Detalhes</th>
                         </tr>
                     </thead>
+                    <tbody id="occurrence-list-day-body"></tbody>
                 </table>
             </div>
         </div>
@@ -91,7 +95,7 @@
     <script src="lib/system.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/light-bootstrap-dashboard.js"></script>
-    <!-- <script src="js/models/occurrence.js"></script>
-    <script src="js/views/occurrence_list.js"></script> -->
+    <script src="js/models/occurrence.js"></script>
+    <script src="js/views/occurrence_list.js"></script>
 </body>
 </html>
