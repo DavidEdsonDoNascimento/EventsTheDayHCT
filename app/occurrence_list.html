@@ -83,6 +83,7 @@
                             <th scope="col">Criado em</th>
                             <th scope="col">Horários</th>
                             <th scope="col">Detalhes</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody id="occurrence-list-day-body"></tbody>
@@ -90,7 +91,25 @@
             </div>
         </div>
     </div>
-
+    
+   <!-- Modals -->
+    <div class="modal" id="modal-json-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">JSON da ocorrência:</h5>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" id="json-content" cols="40" rows="15"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-close-modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-json-save">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="lib/jquery.min.js"></script>
     <script src="lib/system.js"></script>
     <script src="lib/bootstrap.min.js"></script>
