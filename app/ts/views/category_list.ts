@@ -5,11 +5,11 @@ $(document).ready(function(){
 
 const ajaxRequestGetCategories = () => {
     $.ajax({
-        url: `http://localhost:3100/category`,
+        url: `http://localhost:3100/categories`,
         method: 'GET',
         dataType: 'json',
         success: function(data){
-            createCardsCategories(data.categories)
+            createCardsCategories(data)
         },
         error: function(er){
             console.log(er)

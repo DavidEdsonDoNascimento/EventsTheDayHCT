@@ -8,15 +8,11 @@ $(document).ready(function() {
 const loadCategoriesForOccurred = () => {
 
     $.ajax({
-        url: `http://localhost:3100/category`,
+        url: `http://localhost:3100/categories`,
         method: 'GET',
         dataType: 'json',
         success: function(data){
-            if(!data.success){
-                return
-            }
-            
-            popularTheElementSelect($('#select-category'), data.categories)
+            popularTheElementSelect($('#select-category'), data)
         },
         error: function(er){
             console.log(er)
@@ -46,7 +42,7 @@ $('#btn-save-occurrence').on('click', () => {
     }
 
     $.ajax({
-        url: `http://localhost:3100/occurrence`,
+        url: `http://localhost:3100/occurrences`,
         method: 'POST',
         dataType: 'json',
         data: {
@@ -55,11 +51,8 @@ $('#btn-save-occurrence').on('click', () => {
             category_id: selectedCategory
         },
         success: function(data){
-            
-            if(data.success){
-                showMessage('success', data.message)
-                resetOccurrenceInputs()
-            }
+            showMessage('success', data.message)
+            resetOccurrenceInputs()
         },
         error: function(er){
             console.log(er)

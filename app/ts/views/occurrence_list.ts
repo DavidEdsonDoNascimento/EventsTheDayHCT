@@ -6,15 +6,11 @@ $(document).ready(function(){
 
 const loadsTheOccurrences = () => {
     $.ajax({
-        url: `http://localhost:3100/occurrence`,
+        url: `http://localhost:3100/occurrences`,
         method: 'GET',
         dataType: 'json',
         success: function(data){
-            if(!data.success){
-                return
-            }
-            
-            popularTheElement($('#occurrence-list-day-body'), data.occurrence)
+            popularTheElement($('#occurrence-list-day-body'), data)
         },
         error: function(er){
             console.log(er)
@@ -46,23 +42,12 @@ const templateUpdate = (model: Occurrence) => {
 
 const openJsonEditModal = (occurrenceId: string) => {
     $.ajax({
-        url: `http://localhost:3100/occurrence/${occurrenceId}`,
+        url: `http://localhost:3100/occurrences/${occurrenceId}`,
         method: 'GET',
         dataType: 'json',
         success: function(data){
             
-            if(!data.success){
-                console.log(data)
-                return
-            }
-            
-            const { result } = data
-
-            if(result.length <= 0){
-                return;
-            }
-            
-            const occurrenceObject = $(result).get(0)
+            const occurrenceObject = data
             const occurrenceJson = JSON.stringify(occurrenceObject, null, '\t')
 
             let modalJsonEdit = $('#modal-json-edit')
