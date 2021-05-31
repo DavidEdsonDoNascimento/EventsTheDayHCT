@@ -75,5 +75,20 @@ const clearJsonEditModal = () => {
 }
 
 const saveJsonOccurrence = (occurrenceId: string) => {
-    alert('Está funcionalidade ainda está em contrução ...')
+    let modalJsonEdit = $('#modal-json-edit')
+    let jsonContentModal = modalJsonEdit.find('#json-content').val()
+    let jsonOccurrence = JSON.parse(jsonContentModal.toString())
+    
+    $.ajax({
+        url: `http://localhost:3100/occurrences/${occurrenceId}`,
+        method: 'PATCH',
+        dataType: 'json',
+        data: jsonOccurrence,
+        success: function(data){
+            modalJsonEdit.hide('slow')
+        },
+        error: function(er){
+            console.log(er)
+        }
+    })
 }

@@ -2,17 +2,15 @@ $('#btn-save-category').on('click', () => {
     let categoryInput  = $('#category').val()
     
     $.ajax({
-        url: `http://localhost:3100/category`,
+        url: `http://localhost:3100/categories`,
         method: 'POST',
         dataType: 'json',
         data: {
             name: categoryInput
         },
         success: function(data){
-            if(data.success){
-                showMessage('success', data.message)
-                resetCategoryInputs()
-            }
+            showMessage('success', 'Categoria criada com sucesso.')
+            resetCategoryInputs()
         },
         error: function(er){
             console.log(er)
