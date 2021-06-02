@@ -5,3 +5,7 @@ body {
 .invalid-input {
     border: 1px solid red;
 }
+
+ul#ul-times li {
+    list-style-type: none;
+}

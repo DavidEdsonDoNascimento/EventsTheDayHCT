@@ -115,11 +115,31 @@
             </div>
         </div>
     </div>
-    
+    <!-- Modal Times -->
+    <div class="modal" id="modal-times" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 800px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tempo gasto na ocorrência:</h5>
+                </div>
+                <div class="modal-body">
+                    <ul id="ul-times"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-close-modal-times">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-save-times">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Times -->
+    <!-- End Modals -->
     <script src="lib/jquery.min.js"></script>
     <script src="lib/system.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/light-bootstrap-dashboard.js"></script>
+    <script src="js/utils/formatters.js"></script>
+    <script src="js/models/occurrence_time.js"></script>
     <script src="js/models/occurrence.js"></script>
     <script src="js/views/occurrence_list.js"></script>
     <script src="js/views/app.js"></script>

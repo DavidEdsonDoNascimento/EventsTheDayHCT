@@ -49,11 +49,46 @@ const openTimesModal = (occurrenceId: string) => {
         url: `http://localhost:3100/occurrences/${occurrenceId}/times`,
         method: 'GET',
         dataType: 'json',
-        success: function(data){
+        success: function(data: Time[]){
+            
+            //fecha todas as modais pra abrir modal-times
+            const timesJson = data
+            let modalTimes = $('#modal-times')
+            let ul = $('#ul-times')
+
+            timesJson.forEach(item => {
+                ul.append(
+                `<li id="time-${item.id}">
+                    <div class="row">
+                      <input type="text" class="form-control col-sm-3" value="${Formatters.formatUTCDateStringToLocal(item.start)}" disabled/> 
+                      <span class="col-sm-2 text-center">até</span>
+                      <input type="text" class="form-control col-sm-3" value="${Formatters.formatUTCDateStringToLocal(item.end)}" disabled/>
+                        <div class="col-sm-4">
+                            <button class="btn btn-sm btn-default">Editar</button>
+                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(${occurrenceId}, ${item.id})">X</button>
+                        </div>
+                    </div>
+                </li>`
+                )
+            })
+            modalTimes.show('slow')
 
         },
         error: function(er){
+            console.log(er)
+        }
+    })
+}
 
+const removeTime = (occurrenceId:string, timeId: string) => {
+    $.ajax({
+        url: `http://localhost:3100/occurrences/${occurrenceId}/times/${timeId}`,
+        method: 'DELETE',
+        success: function(data){
+            $(`#time-${timeId}`).remove()
+        },
+        error: function(er){
+            console.log(er)
         }
     })
 }
@@ -86,6 +121,14 @@ const openJsonEditModal = (occurrenceId: string) => {
 $('#btn-close-modal').on('click', () => {
     clearJsonEditModal()
     $('#modal-json-edit').hide('slow')
+})
+
+const resetFildsUlTimes = () => {
+    $('#ul-times').html('')
+}
+$('#btn-close-modal-times').on('click', () => {
+    resetFildsUlTimes()
+    $('#modal-times').hide('slow')
 })
 
 const clearJsonEditModal = () => {

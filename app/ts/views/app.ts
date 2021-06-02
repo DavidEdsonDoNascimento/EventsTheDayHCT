@@ -1,6 +1,6 @@
 const checkAPI = () =>
 {
-    $.get('http://localhost:3100/status', (data) => {
+    $.get('http://localhost:3100/checkapi', (data) => {
         alert('API Ativa');
     })
     .fail(() => {
