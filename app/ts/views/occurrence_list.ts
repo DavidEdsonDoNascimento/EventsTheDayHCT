@@ -28,16 +28,34 @@ const templateUpdate = (model: Occurrence) => {
     return `
         <tr>
             <td>${model.summary}</td>
-            <td>${model.create_in}</td>
-            <td><button class="btn btn-sm btn-warning">Horários</button></td>
+            <td>${new Date(model.createdAt).toLocaleString()}</td>
+            <td>
+                <button class="btn btn-sm btn-warning" onclick="openTimesModal(${model.id})">
+                    Horários
+                </button>
+            </td>
             <td><button class="btn btn-sm btn-primary">Detalhes</button></td>
             <td>
                 <button class="btn btn-sm btn-secundary" data-toggle="modal" onclick="openJsonEditModal(${model.id})">
-                JSON
+                    JSON
                 </button>
             </td>
         </tr>
     `
+}
+
+const openTimesModal = (occurrenceId: string) => {
+    $.ajax({
+        url: `http://localhost:3100/occurrences/${occurrenceId}/times`,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data){
+
+        },
+        error: function(er){
+
+        }
+    })
 }
 
 const openJsonEditModal = (occurrenceId: string) => {
