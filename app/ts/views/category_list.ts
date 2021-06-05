@@ -1,6 +1,33 @@
 
 $(document).ready(function(){
-    ajaxRequestGetCategories()
+    //ajaxRequestGetCategories()
+    $('#categories').DataTable({
+        responsive: true,
+        ajax: {
+            url: 'http://localhost:3100/categories',
+            type: 'GET',
+            dataSrc: ''
+        },
+        rowId: 'id',
+        columns: [
+            { data: 'name' },
+            { 
+                data: 'status',
+                render: (data, type) => {
+                    return data == true ? 'Ativo' : 'Inativo'
+                }
+            },
+            { 
+                data: 'id',
+                render: (data, type) => {
+                    return `
+                    <button class="btn btn-info btn-sm" onclick="alert('Em construção...')">Editar</button>
+                    <button class="btn btn-danger btn-sm btn-circle" onclick="deleteCategory(${data})"><i class="fas fa-trash"></i></button>
+                    `
+                }
+            }
+        ]
+    })
 })
 
 const ajaxRequestGetCategories = () => {
@@ -19,16 +46,16 @@ const ajaxRequestGetCategories = () => {
 
 const ajaxRequestDeleteCategory = (id: number) => {
     $.ajax({
-        url: `http://localhost:3100/category/${id}`,
+        url: `http://localhost:3100/categories/${id}`,
         method: 'DELETE',
         dataType: 'json',
         success: function(data){
-            if(data.success){
-                deleteCardCategory(id)
-                showMessage('success', data.message)
+            deleteCardCategory(id)
+            //if(data.success){
                 return
-            }
-            console.log(data)
+                //showMessage('success', data.message)
+            //}
+            //console.log(data)
         },
         error: function(er){
             console.log(er)
@@ -93,7 +120,8 @@ $('#btn-category-search').on('click', () => {
 const deleteCategory = (id: number) => {
     
     if(typeof id == undefined){ 
-        showMessage('danger', 'parametro ID da categoria não encontrado.')
+        //showMessage('danger', 'parametro ID da categoria não encontrado.')
+        console.log('parametro ID da categoria não encontrado.')
         return
     }
     

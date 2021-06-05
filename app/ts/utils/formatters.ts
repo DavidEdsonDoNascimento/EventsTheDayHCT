@@ -2,6 +2,8 @@ class Formatters{
 
     static formatUTCDateStringToLocal(dateUTC: string)
     {
-        return new Date(dateUTC).toLocaleTimeString()
+        
+        const dateLocal = new Date(dateUTC).toLocaleString()
+        return dateLocal
     }
 }

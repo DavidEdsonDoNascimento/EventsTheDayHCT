@@ -60,12 +60,23 @@ const openTimesModal = (occurrenceId: string) => {
                 ul.append(
                 `<li id="time-${item.id}">
                     <div class="row">
-                      <input type="text" class="form-control col-sm-3" value="${Formatters.formatUTCDateStringToLocal(item.start)}" disabled/> 
-                      <span class="col-sm-2 text-center">até</span>
-                      <input type="text" class="form-control col-sm-3" value="${Formatters.formatUTCDateStringToLocal(item.end)}" disabled/>
-                        <div class="col-sm-4">
-                            <button class="btn btn-sm btn-default">Editar</button>
-                            <button class="btn btn-sm btn-danger" style="border-radius:50%" onclick="removeTime(${occurrenceId}, ${item.id})">X</button>
+                        <input type="text" class="form-control col-sm-3 fild-time" value="${Formatters.formatUTCDateStringToLocal(item.start)}" disabled/> 
+                        <span class="col-sm-2 text-center">até</span>
+                        <input type="text" class="form-control col-sm-3 fild-time" value="${Formatters.formatUTCDateStringToLocal(item.end)}" disabled/>
+                        
+                        <div class="btn-group btn-group-toggle col-sm-4" data-toggle="buttons">
+                            <button class="btn btn-secondary  btn-round active" onclick="disabledFildsTime(${item.id})">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> T
+                            </button>
+                            <button class="btn btn-warning btn-round" onclick="enabledFildsTime(${item.id})">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> D
+                            </button>
+                            <button class="btn btn-danger btn-round" onclick="removeTime(${occurrenceId}, ${item.id})">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> X
+                            </button>
+                            <button class="btn btn-success btn-round" onclick="updateTime(${item.id})">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> S
+                            </button>
                         </div>
                     </div>
                 </li>`
@@ -78,6 +89,27 @@ const openTimesModal = (occurrenceId: string) => {
             console.log(er)
         }
     })
+}
+
+const disabledFildsTime = (timeId: string) => {
+    
+    let fildTimes = $(`#time-${timeId}`).find('.fild-time')
+    
+    fildTimes.each((index, item) => {
+        $(item).attr('disabled', 'disabled')
+    })
+}
+
+const enabledFildsTime = (timeId: string) => {
+    let fildTimes = $(`#time-${timeId}`).find('.fild-time')
+    
+    fildTimes.each((index, item) => {
+        $(item).removeAttr('disabled')
+    })
+}
+
+const updateTime = () => {
+    alert('Em construção...')
 }
 
 const removeTime = (occurrenceId:string, timeId: string) => {
