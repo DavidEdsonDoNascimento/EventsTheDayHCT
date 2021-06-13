@@ -51,7 +51,7 @@ $('#btn-save-occurrence').on('click', () => {
             category_id: selectedCategory
         },
         success: function(data){
-            showMessage('success', data.message)
+            showMessage('success', 'Ocorrencia criada com sucesso')
             resetOccurrenceInputs()
         },
         error: function(er){
