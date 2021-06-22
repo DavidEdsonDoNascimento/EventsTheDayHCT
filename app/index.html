@@ -80,6 +80,25 @@
                 </div>
             </li>
 
+             <!-- Nav Item - Utilities Collapse Menu -->
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTimes"
+                    aria-expanded="true" aria-controls="collapseTimes">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Horários</span>
+                </a>
+                <div id="collapseTimes" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilitários:</h6>
+                        <a class="collapse-item" href="time_clock.html">Pontos</a>
+                        <a class="collapse-item" href="on_call.html">Plantões</a>
+                        <a class="collapse-item" href="calculator.html">Calculadora</a>
+                    </div>
+                </div>
+            </li>
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -311,7 +330,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">David Nascimento</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small user-name"></span>
                                 <img class="img-profile rounded-circle"
                                     src="vendor/theme/img/undraw_profile.svg">
                             </a>
@@ -401,6 +420,6 @@
     <script src="vendor/theme/lib/system.js"></script>
     <script src="vendor/theme/lib/bootstrap.min.js"></script>
     <script src="vendor/theme/lib/light-bootstrap-dashboard.js"></script>
-    <script src="vendor/theme/js/views/app.js"></script>
+    <script src="js/views/app.js"></script>
 </body>
 </html>

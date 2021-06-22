@@ -80,6 +80,25 @@
                 </div>
             </li>
 
+             <!-- Nav Item - Utilities Collapse Menu -->
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTimes"
+                    aria-expanded="true" aria-controls="collapseTimes">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Horários</span>
+                </a>
+                <div id="collapseTimes" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilitários:</h6>
+                        <a class="collapse-item" href="time_clock.html">Pontos</a>
+                        <a class="collapse-item" href="on_call.html">Plantões</a>
+                        <a class="collapse-item" href="calculator.html">Calculadora</a>
+                    </div>
+                </div>
+            </li>
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -348,37 +367,23 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Categorias</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800">Calculadora</h1>
                     </div>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Todas as categorias de ocorrências</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="categories" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Status</th>
-                                            <th>Ações</th>
-                                        </tr>
-                                      </thead>
-                                </table>
-                            </div>
-                        </div>
+                    <!-- Content Row -->
+                    <div class="row">
+                        <textarea  class="form-control" name="times-area" id="times-area" cols="30" rows="10"></textarea>
                     </div>
+
+                    <button id="btn-convert">Converter</button>
+                    <button id="btn-calculator">Converter</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+     <!-- Scroll to Top Button-->
+     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -401,6 +406,7 @@
             </div>
         </div>
     </div>
+    <!-- End Logout Modal-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/theme/vendor/jquery/jquery.min.js"></script>
@@ -411,15 +417,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="vendor/theme/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/theme/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/theme/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="vendor/theme/js/demo/datatables-demo.js"></script>
-
+    <script src="vendor/theme/lib/jquery.min.js"></script>
+    <script src="vendor/theme/lib/system.js"></script>
+    <script src="vendor/theme/lib/bootstrap.min.js"></script>
+    <script src="vendor/theme/lib/light-bootstrap-dashboard.js"></script>
     <script src="js/views/app.js"></script>
-    <script src="js/views/category_list.js"></script>
 </body>
 </html>

@@ -11,6 +11,9 @@ const loadCategoriesForOccurred = () => {
         url: `http://localhost:3100/categories`,
         method: 'GET',
         dataType: 'json',
+        beforeSend: (xhr) => {
+            xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`)
+        },
         success: function(data){
             popularTheElementSelect($('#select-category'), data)
         },
@@ -45,6 +48,9 @@ $('#btn-save-occurrence').on('click', () => {
         url: `http://localhost:3100/occurrences`,
         method: 'POST',
         dataType: 'json',
+        beforeSend: (xhr) => {
+            xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`)
+        },
         data: {
             summary: summary,
             obs: obs,

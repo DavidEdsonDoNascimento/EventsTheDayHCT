@@ -41,15 +41,24 @@ $('#btn-login').on('click', () => {
         dataType: 'json',
         beforeSend: (xhr) => {
             xhr.setRequestHeader('Authorization', `Basic ${encryptData}`);
-        },
-        success: (data) => {
-            console.log('success');
-            
-            window.location.href = 'index.html';
-        },
-        error: (error) => {
-            console.log('error');
-            console.log(error);
         }
     })
+    .done((data, status) => {
+        
+        if(status !== "success"){
+            console.log(status);
+            return;
+        }
+        
+        const { user, token } = data;
+
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('token', token);
+        
+        location.href = 'index.html';
+    })
+    .fail((err) => {
+        console.log(err);
+    });
+    
 });

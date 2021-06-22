@@ -13,6 +13,8 @@
  
      <!-- Custom styles for this template-->
      <link href="vendor/theme/css/sb-admin-2.min.css" rel="stylesheet">
+
+     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="page-top">
 
@@ -310,8 +312,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">David Nascimento</span>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small user-name"></span>
                                 <img class="img-profile rounded-circle"
                                     src="vendor/theme/img/undraw_profile.svg">
                             </a>
@@ -444,7 +446,8 @@
                </div>
                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="btn-close-modal-times">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="btn-save-times" style="">+</button>
+                    <button type="button" class="btn btn-primary" id="btn-add-times">+</button>
+                    <button type="button" class="btn btn-success" id="btn-save-times">Salvar</button>
                </div>
            </div>
        </div>
@@ -470,9 +473,11 @@
     <!-- Page level custom scripts -->
     <script src="vendor/theme/js/demo/datatables-demo.js"></script>
 
+    <script src="js/views/app.js"></script>
     <script src="js/utils/formatters.js"></script>
     <script src="js/models/occurrence_time.js"></script>
     <script src="js/models/occurrence.js"></script>
+    <script src="js/views/ocurrence_time.js"></script>
     <script src="js/views/occurrence_list.js"></script>
 </body>
 </html>

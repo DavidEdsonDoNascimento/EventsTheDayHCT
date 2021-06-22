@@ -6,6 +6,9 @@ $(document).ready(function(){
         ajax: {
             url: 'http://localhost:3100/categories',
             type: 'GET',
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`)
+            },
             dataSrc: ''
         },
         rowId: 'id',
