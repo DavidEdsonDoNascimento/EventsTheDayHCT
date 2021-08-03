@@ -31,7 +31,7 @@ $(document).ready(function(){
             { 
                 data: 'id',
                 render: (data, type) => {
-                    return `<button class="btn btn-sm btn-primary">Detalhes</button>`
+                    return `<a class="btn btn-sm btn-primary" href="occurrence_detail.html?id=${data}">Detalhes</a>`
                 }
             },
             {
@@ -126,7 +126,7 @@ const openJsonEditModal = (occurrenceId: string) => {
 
             jsonContentModal.val(occurrenceJson)
             btnSaveJson.attr('onclick', `saveJsonOccurrence(${occurrenceObject.id})`)
-            modalJsonEdit.show('slow')
+            modalJsonEdit.show()
 
         },
         error: function(er){
@@ -145,7 +145,7 @@ const resetFildsUlTimes = () => {
 }
 $('#btn-close-modal-times').on('click', () => {
     resetFildsUlTimes()
-    $('#modal-times').hide('slow')
+    $('#modal-times').hide()
 })
 
 const clearJsonEditModal = () => {

@@ -5,10 +5,33 @@ $('#btn-add-times').on('click', () => {
 $('#btn-save-times').on('click', () => {
     
     const ul = $('#ul-times');
-    const timesPendent = ul.find('[data-type="insert"]');
+    const times = {
+        insert: ul.find('[data-type="insert"]'),
+        update: ul.find('[data-type="update"]'),
+        delete: ul.find('[data-type="delete"]')
+    };
     //criar o json para o insert de multi-times
-    console.log(timesPendent);
+    console.log(times);
+    // "Times": [
+	// 	{
+	// 		"id": 1,
+	// 		"start": "2021-05-30T17:20:04.000Z",
+	// 		"end": "2021-05-30T19:20:46.000Z",
+	// 		"status": true,
+	// 		"createdAt": "2021-05-30T20:20:46.000Z",
+	// 		"updatedAt": "2021-06-16T19:41:55.000Z",
+	// 		"occurrence_id": 1
+	// 	},
 
+    const iTime = times.insert.map((index, inputTime) => {
+        console.log(index)
+        const [ start, end ] = $(inputTime).find('input');
+        return { 
+            start: $(start).val(), 
+            end: $(end).val() 
+        }
+    });
+    console.log(iTime);
 })
 
 const openTimesModal = (occurrenceId: string) => {
@@ -25,21 +48,17 @@ const openTimesModal = (occurrenceId: string) => {
             const timesJson = data
             let modalTimes = $('#modal-times')
             let ul = $('#ul-times')
-
-            if(timesJson.length == 0 ){
-                
+            ul.append(`<input type="hidden" id="${occurrenceId}"/>`)
+            
+            if (timesJson.length == 0) {
                 ul.append(`<p class="text-center">Nenhum registro de tempo encontrado.</p>`)
-            }
-            else{
-
+            } else {
                 timesJson.forEach(item => {
                     ul.append(timesListTemplate(occurrenceId, item));
                 })
             }
 
-            
             modalTimes.show()
-
         },
         error: function(er){
             console.log(er)
