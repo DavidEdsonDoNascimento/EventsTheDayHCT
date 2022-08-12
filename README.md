@@ -3,7 +3,7 @@ Application to organize the events of your day
 
 ## To test in a local environment you need to install and run the API first:
 
-* <a href="https://github.com/DavidEdsonDoNascimento/events_of_the_day_api" target="_blank">Events of the day API</a>
+* <a href="https://github.com/DavidEdsonDoNascimento/EventsTheDayAPIJS" target="_blank">Events of the day API</a>
 
 ## Then install and run this application using the commands:
 
